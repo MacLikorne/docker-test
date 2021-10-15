@@ -6,7 +6,7 @@ RUN pecl install redis
 RUN docker-php-ext-enable redis
 RUN docker-php-source delete
 
-RUN apt-get install nginx supervisor
+RUN apt-get install -y nginx supervisor
 
 COPY tools/docker/app/default.conf /etc/nginx/http.d/default.conf
 COPY tools/docker/app/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
