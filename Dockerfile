@@ -1,6 +1,6 @@
 FROM php:8.0-fpm-buster as php-base
 
-RUN apt-get update && apt-get install -y libzip-dev libxml2-dev oniguruma-dev $PHPIZE_DEPS
+RUN apt-get update && apt-get install -y libzip-dev libxml2-dev libonig-dev $PHPIZE_DEPS
 RUN docker-php-ext-install zip mbstring simplexml bcmath pdo pdo_mysql opcache
 RUN pecl install redis
 RUN docker-php-ext-enable redis
